@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Aplicacion.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Peores Clientes";
+}
+
+<h1>Peores Clientes</h1>
+
+<p>
+    <a asp-action="Index">Regresar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descuento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComprasRecientes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComprasUltimoAno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadAcComprados)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descuento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComprasRecientes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComprasUltimoAno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadAcComprados)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
